@@ -17,15 +17,20 @@ class Time:
     # Provide a developer-friendly string representation of the object.
     # input: Time for which a string representation is desired. 
     # output: string representation
+    def __repr__(self):
+        return "Time({}, {}, {})".format(self.hour, self.minute,self.second)
 
 
     # Compare the Time object with another value to determine equality.
     # input: Time against which to compare
     # input: Another value to compare to the Time
     # output: boolean indicating equality
-
-
-
+    def __eq__(self, other):
+        if (type(other) == Time):
+            if (other.hour == self.hour and other.minute == self.minute
+            and other.second == self.second):
+                return True
+        return False
 
 # Representation of a two-dimensional point.
 class Point:
